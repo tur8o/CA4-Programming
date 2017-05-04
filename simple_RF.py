@@ -1,4 +1,6 @@
 #testing absolute shite
+
+#second commit test
 def read_file(changes_file):
     # use strip to strip out spaces and trim the line.
     data = [line.strip() for line in open(changes_file, 'r')]
