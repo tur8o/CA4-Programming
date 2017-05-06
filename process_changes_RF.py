@@ -3,8 +3,8 @@
 changes_file = 'changes_python_RF.log'
 # use strip to strip out spaces and trim the line.
 
-#my_file = open(changes_file, 'r')
-#data = my_file.readlines()
+my_file = open(changes_file, 'r')
+data = my_file.readlines()
 
 data = [line.strip() for line in open(changes_file, 'r')]
 
@@ -59,3 +59,4 @@ commits.reverse()
 
 for index, commit in enumerate(commits):
     print(commit.get_commit_comment())
+    
