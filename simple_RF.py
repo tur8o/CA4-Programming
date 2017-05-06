@@ -16,7 +16,7 @@ def get_commits(data):
             details = data[index + 1].split('|')
             # the author with spaces at end removed.
             commit = {'Revision': details[0].strip(),
-                'Author': details[1].strip().replace('/OU=Domain Control Validated/CN=svn.company.net','Domain Control'),  #tidy up domain control
+                'Author': details[1].strip().replace('/OU=Domain Control Validated/CN=svn.company.net','Domain Control').replace('ajon0002','Jon').replace('murari.krishnan','Murari'),  #tidy up domain control
                 'Date': details[2].strip(),
                 'Number_of_lines': details[3].strip().split(' ')[0] #had to change dict to zero otherwise would show line or lines in CSV
             }
