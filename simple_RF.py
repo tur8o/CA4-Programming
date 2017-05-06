@@ -18,7 +18,7 @@ def get_commits(data):
             commit = {'revision': details[0].strip(),
                 'author': details[1].strip(),
                 'date': details[2].strip(),
-                'number_of_lines': details[3].strip().split(' ')[1]
+                'number_of_lines': details[3].strip().split(' ')[0] #had to change dict to zero otherwise would show line or lines in CSV
             }
             # add details to the list of commits.
             commits.append(commit)
