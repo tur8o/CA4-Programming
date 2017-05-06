@@ -15,10 +15,10 @@ def get_commits(data):
             # parse each of the commits and put them into a list of commits
             details = data[index + 1].split('|')
             # the author with spaces at end removed.
-            commit = {'revision': details[0].strip(),
-                'author': details[1].strip(),
-                'date': details[2].strip(),
-                'number_of_lines': details[3].strip().split(' ')[0] #had to change dict to zero otherwise would show line or lines in CSV
+            commit = {'Revision': details[0].strip(),
+                'Author': details[1].strip().replace('/OU=Domain Control Validated/CN=svn.company.net','Domain Control'),  #tidy up domain control
+                'Date': details[2].strip(),
+                'Number_of_lines': details[3].strip().split(' ')[0] #had to change dict to zero otherwise would show line or lines in CSV
             }
             # add details to the list of commits.
             commits.append(commit)
