@@ -1,3 +1,5 @@
+import csv
+
 def read_file(changes_file):
     # use strip to strip out spaces and trim the line.
     data = [line.strip() for line in open(changes_file, 'r')]
@@ -32,8 +34,14 @@ if __name__ == '__main__':
     commits = get_commits(data)
 
     # print the number of lines read
-    print(len(data))
-    #print(commits)
-    print(commits[0])
-    print(commits[1]['author'])
-    print(len(commits))
+    # print(len(data))
+    # print(commits)
+    # print(commits[0])
+    # print(commits[1]['author'])
+    # print(len(commits))
+    
+keys = commits[0].keys()
+with open('CA4_programming_output.csv','wb') as csv_CA4:
+    write_to_dict = csv.DictWriter(csv_CA4,keys)
+    write_to_dict.writeheader()
+    write_to_dict.writerows(commits)

@@ -1,4 +1,3 @@
-
 # open the file - and read all of the lines.
 changes_file = 'changes_python_RF.log'
 # use strip to strip out spaces and trim the line.
