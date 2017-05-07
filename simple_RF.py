@@ -28,6 +28,13 @@ def get_commits(data):
             break
     return commits
 
+def attach_csv():  
+    keys = commits[0].keys()
+    with open('CA4_programming_output.csv','wb') as csv_CA4:
+        write_to_dict = csv.DictWriter(csv_CA4,keys)
+        write_to_dict.writeheader()
+        write_to_dict.writerows(commits) 
+        
 if __name__ == '__main__':
     # open the file - and read all of the lines.
     changes_file = 'changes_python_RF.log'
@@ -40,9 +47,5 @@ if __name__ == '__main__':
     # print(commits[0])
     # print(commits[1]['author'])
     # print(len(commits))
-    
-keys = commits[0].keys()
-with open('CA4_programming_output.csv','wb') as csv_CA4:
-    write_to_dict = csv.DictWriter(csv_CA4,keys)
-    write_to_dict.writeheader()
-    write_to_dict.writerows(commits)
+
+attach_csv()

@@ -1,4 +1,4 @@
-
+#attach_csv function breaks the testing, NameError: commits not defined
 import unittest
 
 from simple_RF import get_commits, read_file
@@ -17,8 +17,10 @@ class TestCommits(unittest.TestCase):
 
     def test_first_commit(self):
         commits = get_commits(self.data)
-        self.assertEqual('Thomas', commits[0]['author'])
-        self.assertEqual('r1551925', commits[0]['revision'])
+        self.assertEqual('Thomas', commits[0]['Author'])
+        self.assertEqual('r1551925', commits[0]['Revision'])
+        self.assertEqual('1', commits[0]['Number_of_lines'])
+        self.assertEqual('2015-11-27 16:57:44 +0000 (Fri, 27 Nov 2015)', commits[0]['Date'])
 
 if __name__ == '__main__':
     unittest.main()
